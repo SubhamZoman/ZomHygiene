@@ -33,7 +33,6 @@ body, html {
 .header img {
   height: 15vw;
   width: 13vw;
-  border: 1px solid white;
 }
 .hygiene-headings {
   margin-left: 2vw;
@@ -59,11 +58,9 @@ body, html {
   height: 35vh;
   margin: 2.5vw 0 0 2.5vw;
 }
-.rating-divs {
+.rating-divs img{
   width: 100%;
-  display: inline-flex;
-  justify-content: space-around;
-  align-content: center;
+  height: 15vw;
 }
 .rating{
   font-family: AvenirNext;
@@ -87,34 +84,7 @@ body, html {
   margin: 0 auto;
   margin-top: -1.5vw;
 }
-.layer-1{
-  background: #e68d92;
-  padding: .5vw;
-  border-radius: 50%;
-  padding: .5vw;
-}
-.layer-2{
-  font-size: 6vw;
-  font-family: AvenirNext;
-  background: #e1767c;
-  border-radius: 50%;
-  padding: 0 2.4vw;
-  margin: 0;
-}
-.marker{
-  width: 0; 
-  height: 0; 
-  border-left: 1vw solid transparent;
-  border-right: 1vw solid transparent;
-  border-bottom: 1vw solid #e1767c;
-  margin: 10px auto;
-}
-.quality{
-  font-family: AvenirNext;
-  font-size: 3vw;
-  color: #e1767c;
-  text-align: center;
-}
+
 .valid-until-audited-by{
   font-weight: normal;
   font-family: Arial;
@@ -126,53 +96,44 @@ hr {
   border-top: 1px solid #ccc;
 }
 .initiative-by{
-  margin: .5vw 0 1vw 2.5vw;
-}
-.initiative-by p:first-child{
-  font-family: AvenirNext;
-  color: #999;
-  font-size: 16px;
+  margin: 2.5vw 0 0 2.5vw;
 }
 .initiative-by img{
   width: 20vw;
-  height: 5vw;
-  border: 1px solid black;
 }
-.initiative-by p:last-child{
-  font-family: AvenirNext;
-  font-size: 18px;
-}
+
 .mobile-screen{
   position: absolute;
-  height: 46.5vw;
   width: 30vw;
-  border: 1px solid #eee;
+  height: 44vw;
   right: 8vw;
-  top: 4vw;
-  background: #fff;
-  box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.2);
-
+  top: 6.6vw;
+  background-image: url('../assets/images/phone.png');
+  background-size: 105% auto;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .rating-on-mobile{
   position: absolute;
   right: 4vw;
-  top: 35vw;
+  top: 37vw;
   width: 38vw;
-  height: 7vw;
-  background: #fff;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  height: 8vw;
+  background-image: url('../assets/images/RatingPhone 3.png');
+  background-size: 100% auto;
+  background-position: center;
 }
 .restaurant-info{
-  width: 90%;
-  height: 38.45vw;
-  margin: 8vw 5% 0 5%;
-  border: 2px solid #444;
+  width: 83%;
+  margin: 8.9vw 0 0 8.5%;
   border-bottom: 0;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 .restaurant-info img{
   width: 100%;
+}
+.restaurant-details{
+  margin: 1vw;
 }
 .restaurant-details .name{
   font-family: AvenirNext;
@@ -192,8 +153,8 @@ hr {
 .restaurant-details .res-rating{
   position: absolute;
   font-family: AvenirNext;
-  top: 10vw;
-  right: 2.5vw;
+  top: 26vw;
+  right: 3.5vw;
   padding: 5px 10px;
   border-radius: 5px;
   background:#a9c346;
@@ -204,39 +165,7 @@ hr {
   display: inline-flex;
 }
 .rating-div{
-  background: #e1767c;
-  padding: .3vw;
   border-radius: 50%;
   height: 3.7vw;
 }
-.restaurant-rating p{
-  color: var(--warm-grey);
-  font-family: AvenirNext;
-  margin: 0 0 5px 10px;
-}
-.restaurant-rating .rating-got{
-  color: #e1767c;
-  font-size: 1.8vw;
-}
-.restaurant-rating .know-more{
-  position: absolute;
-  top: 3vw;
-  right: 20px;
-  color: #01b460;
-  font-family: Arial;
-  font-weight: bold;
-}
-.restaurant-rating .mobile-layer-1 {
-  padding: .5vw;
-  background: #e68d92;
-  border-radius: 50%;
-}
-.restaurant-rating .mobile-layer-2 {
-  background: #e1767c;
-  border-radius: 50%;
-  font-size: 1.5vw;
-  font-weight: bold;
-  font-family: AvenirNext;
-  color: #fff;
-  padding: .3vw .8vw;
-}
+
