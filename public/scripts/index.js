@@ -1,25 +1,25 @@
 $(document).ready(function () {
-  const rating = 5;
-  const validUntil = '04 MARCH 2019';
-  const auditedBy = 'EQUINOX LABS';
-  const dishImageSrc = 'http://via.placeholder.com/432x240';
-  const restaurantName = 'Burger King Cafe';
-  const restaurantAddr = 'DLF Phase 3, Gurgaon';
-  const restaurantRating = 3.8;
-
-  addRating(rating);
-  addAudit(validUntil, auditedBy);
-  addRestaurantDetails(dishImageSrc, restaurantName, restaurantAddr, restaurantRating);
-  addMobileRating(rating);
+  let reportData;
+  fetch('../assets/report.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonObj) {
+      reportData = jsonObj;
+      addRating(jsonObj.rating);
+      addAudit(jsonObj.validUntil, jsonObj.auditedBy);
+      addRestaurantDetails(jsonObj.dishImageSrc, jsonObj.restaurantName, jsonObj.restaurantAddr, jsonObj.restaurantRating);
+      addMobileRating(jsonObj.rating);
+    });
 });
 
-function addRating(rating){
+function addRating(rating) {
   const rateThreeSrc = './assets/images/Rating 3.png';
   const rateFourSrc = './assets/images/Rating 4.png';
   const rateFiveSrc = './assets/images/Rating 5.png';
-  
+
   var imageSrc = '';
-  switch(rating){
+  switch (rating) {
     case 3: imageSrc = rateThreeSrc; break;
     case 4: imageSrc = rateFourSrc; break;
     case 5: imageSrc = rateFiveSrc; break;
@@ -39,13 +39,13 @@ function addRestaurantDetails(src, name, addr, rating) {
   $('.restaurant-details .res-rating').text(rating);
 }
 
-function addMobileRating(rating){
+function addMobileRating(rating) {
   const rateThreeSrc = './assets/images/RatingPhone 3.png';
   const rateFourSrc = './assets/images/RatingPhone 4.png';
   const rateFiveSrc = './assets/images/RatingPhone 5.png';
-  
+
   var imageSrc = '';
-  switch(rating){
+  switch (rating) {
     case 3: imageSrc = rateThreeSrc; break;
     case 4: imageSrc = rateFourSrc; break;
     case 5: imageSrc = rateFiveSrc; break;
