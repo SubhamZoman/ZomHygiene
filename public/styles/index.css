@@ -52,6 +52,7 @@ body, html {
   font-weight: 600;
   color: #fff;
   width: 35vw;
+  line-height: 5vw;
 }
 .rating-container{
   width: 50vw;
@@ -116,7 +117,7 @@ hr {
 .rating-on-mobile{
   position: absolute;
   right: 4vw;
-  top: 37vw;
+  top: 36vw;
   width: 38vw;
   height: 8vw;
   background-size: 100% auto;
@@ -130,6 +131,7 @@ hr {
 }
 .restaurant-info img{
   width: 100%;
+  height: auto;
 }
 .restaurant-details{
   margin: 1vw;
@@ -152,7 +154,7 @@ hr {
 .restaurant-details .res-rating{
   position: absolute;
   font-family: AvenirNext;
-  top: 24.5vw;
+  top: 24.3vw;
   right: 3.5vw;
   padding: 5px 10px;
   border-radius: 5px;
@@ -166,5 +168,18 @@ hr {
 .rating-div{
   border-radius: 50%;
   height: 3.7vw;
+}
+.first-100{
+  position: absolute;
+  top: 6.5vw;
+  right: 4vw;
+  width: 12vw;
+  height: 8.8vw;
+}
+.phone-actions{
+  position: absolute;
+  top: 44vw;
+  right: 11vw;
+  width: 24vw;
 }
 
