@@ -1,0 +1,116 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  --dark-blue-grey: #173143; 
+  --warm-grey: #888;
+}
+
+@font-face{
+  font-family: IdealSansMedium;
+  src: url("../assets/fonts/IdealSans/IDEALSANS-MEDIUM.OTF");
+}
+@font-face{
+  font-family: IdealSansLight;
+  src: url("../assets/fonts/IdealSans/IDEALSANS-LIGHT.OTF");
+}
+@font-face{
+  font-family: AvenirNext;
+  src: url("../assets/fonts/Avenir Next.ttc") format('truetype')
+}
+@font-face{
+  font-family: GothamSSmBold;
+  src: url("../assets/fonts/GothamSSm/GothamSSm-Bold.otf")
+}
+
+.header {
+  width: 96%;
+  height: 28.5vw;
+  background: var(--dark-blue-grey);
+  padding: 2% 0 2% 4.5%;
+}
+.header-contents {
+  display: inline-flex;
+  justify-content: left;
+}
+.header img {
+  height: 24.8vw;
+  width: 22.5vw;
+  margin-top: 1vw;
+}
+.hygiene-headings {
+  margin: 4vw 0 4vw 4vw;
+}
+.we-are-proud-to-share{
+  font-family: IdealSansMedium;
+  font-size: 4.5vw;
+  font-weight: 600;
+  text-align: left;
+  color: #4f92c9;
+  margin-top: 0vw;
+  margin-bottom: 2vw;
+}
+.restaurant-details{
+  display: inline-flex;
+  width: 80%;
+  margin: 3vw 7.5vw 2vw 7.5vw;
+}
+.restaurant-details .name, .restaurant-details .comma{
+  font-size: 5.7vw;
+  color: var(--dark-blue-grey);
+  font-family: AvenirNext;
+}
+.restaurant-details .location{
+  font-size: 2.3vw;
+  color: var(--warm-grey);
+  font-weight: 500;
+  margin: 3.4vw 0 0 1.5vw;
+  font-family: Arial;
+}
+.food-hygiene-rating{
+  font-family: AvenirNext;
+  font-size: 7vw;
+  font-weight: 600;
+  color: #fff;
+  width: 60vw;
+  line-height: 7vw;
+}
+.rating-container{
+  width: 90%;
+  height: 35vh;
+  margin: 0 5vw 0 5vw;
+}
+.rating-divs img{
+  width: 95%;
+  margin: 0 2.5%;
+  height: auto;
+}
+.valid-until-audited-by{
+  font-weight: normal;
+  text-align: center;
+  margin: 2vw 0;
+  font-size: 2.3vw;
+  font-family: GothamSSmBold;
+  letter-spacing: 1px;
+}
+hr {
+  border: 0;
+  border-top: 2px solid #ccc;
+}
+.initiative-by{
+  margin: 3vw 5vw 0 5vw;
+}
+.initiative-by img{
+  width: 40vw;
+}
+.first-100{
+  position: absolute;
+  top: 82vw;
+  right: 3vw;
+  width: 22.5vw;
+}
+
+
+

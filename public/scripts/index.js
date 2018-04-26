@@ -1,25 +1,33 @@
 $(document).ready(function () {
-  const rating = 5;
-  const validUntil = '04 MARCH 2019';
-  const auditedBy = 'EQUINOX LABS';
-  const dishImageSrc = 'http://via.placeholder.com/432x240';
-  const restaurantName = 'Burger King Cafe';
-  const restaurantAddr = 'DLF Phase 3, Gurgaon';
-  const restaurantRating = 3.8;
-
-  addRating(rating);
-  addAudit(validUntil, auditedBy);
-  addRestaurantDetails(dishImageSrc, restaurantName, restaurantAddr, restaurantRating);
-  addMobileRating(rating);
+  let reportData;
+  let fileName = window.location.href.split('?')[1].split('=')[1]
+  fetch(`../assets/reports/${fileName}.json`)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonObj) {
+      reportData = jsonObj;
+      addRating(jsonObj.rating);
+      addAudit(jsonObj.validUntil, jsonObj.auditedBy);
+      addRestaurantDetails(jsonObj.dishImageSrc, jsonObj.restaurantName, jsonObj.restaurantAddr, jsonObj.restaurantRating, jsonObj.ratingColor);
+      addMobileRating(jsonObj.rating);
+    });
 });
 
-function addRating(rating){
-  const rateThreeSrc = './assets/images/Rating 3.png';
-  const rateFourSrc = './assets/images/Rating 4.png';
-  const rateFiveSrc = './assets/images/Rating 5.png';
-  
+function addRating(rating) {
+  const page = window.location.href.split('/')[3].split('.')[0]
+  const rateThreeSrc = page === 'instagram'
+    ? './assets/IN/Rating 3.png'
+    : './assets/images/Rating 3.png'
+  const rateFourSrc = page === 'instagram'
+    ? './assets/IN/Rating 4.png'
+    : './assets/images/Rating 4.png'
+  const rateFiveSrc = page === 'instagram'
+    ? './assets/IN/Rating 5.png'
+    : './assets/images/Rating 5.png'
+
   var imageSrc = '';
-  switch(rating){
+  switch (parseInt(rating)) {
     case 3: imageSrc = rateThreeSrc; break;
     case 4: imageSrc = rateFourSrc; break;
     case 5: imageSrc = rateFiveSrc; break;
@@ -32,25 +40,25 @@ function addAudit(validUntil, auditedBy) {
   $('.audited-by').text(auditedBy);
 }
 
-function addRestaurantDetails(src, name, addr, rating) {
+function addRestaurantDetails(src, name, addr, rating, color) {
   $('.restaurant-info img').attr('src', src);
   $('.restaurant-details .name').text(name);
   $('.restaurant-details .location').text(addr);
   $('.restaurant-details .res-rating').text(rating);
+  $('.restaurant-details .res-rating').css('background', color);
 }
 
-function addMobileRating(rating){
+function addMobileRating(rating) {
   const rateThreeSrc = './assets/images/RatingPhone 3.png';
   const rateFourSrc = './assets/images/RatingPhone 4.png';
   const rateFiveSrc = './assets/images/RatingPhone 5.png';
-  
+
   var imageSrc = '';
-  switch(rating){
+  switch (parseInt(rating)) {
     case 3: imageSrc = rateThreeSrc; break;
     case 4: imageSrc = rateFourSrc; break;
     case 5: imageSrc = rateFiveSrc; break;
     default: imageSrc = '';
   }
-  console.log(imageSrc)
   $('.rating-on-mobile').css('background-image', `url('${imageSrc}')`);
 }

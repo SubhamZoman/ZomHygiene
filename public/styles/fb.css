@@ -3,39 +3,45 @@ body, html {
   padding: 0;
   width: 100%;
   height: 100%;
+  background: #fff;
   --dark-blue-grey: #173143; 
   --warm-grey: #888;
 }
 
 @font-face{
   font-family: IdealSansMedium;
-  src: url("../assets/fonts/IDEALSANS-MEDIUM.OTF");
+  src: url("../assets/fonts/IdealSans/IDEALSANS-MEDIUM.OTF");
 }
 @font-face{
   font-family: IdealSansLight;
-  src: url("../assets/fonts/IDEALSANS-LIGHT.OTF");
+  src: url("../assets/fonts/IdealSans/IDEALSANS-LIGHT.OTF");
 }
 @font-face{
   font-family: AvenirNext;
   src: url("../assets/fonts/Avenir Next.ttc") format('truetype')
 }
+@font-face{
+  font-family: GothamSSmBold;
+  src: url("../assets/fonts/GothamSSm/GothamSSm-Bold.otf")
+}
 
 .header {
   width: 95%;
-  height: 30%;
+  height: 28%;
   background: var(--dark-blue-grey);
   padding: 2.5%;
 }
 .header-contents {
   display: inline-flex;
   justify-content: left;
+  margin-left: 1vw;
 }
 .header img {
   height: 15vw;
   width: 13vw;
 }
 .hygiene-headings {
-  margin-left: 2vw;
+  margin-left: 3vw;
 }
 .we-are-proud-to-share{
   font-family: IdealSansMedium;
@@ -55,111 +61,95 @@ body, html {
   line-height: 5vw;
 }
 .rating-container{
-  width: 50vw;
+  width: 45vw;
   height: 35vh;
-  margin: 2.5vw 0 0 2.5vw;
+  margin: 2.5vw 0 0 3.5vw;
 }
 .rating-divs img{
   width: 100%;
-  height: 15vw;
+  height: 13vw;
 }
-.rating{
-  font-family: AvenirNext;
-  font-size: 3.5vw;
-  height: 4.5vw;
-  color: #aaadbd;
-  font-weight: 600;
-  border: .6vw solid #aaadbd;
-  border-radius: 50%;
-  text-align: center; 
-  padding: .6vw 1.8vw;
-  
-}
-.rated{
-  background: #e1767c;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: .3vw;
-  width: 9.5vw;
-  margin: 0 auto;
-  margin-top: -1.5vw;
-}
-
 .valid-until-audited-by{
   font-weight: normal;
   font-family: Arial;
   text-align: center;
-  margin: 15px 0;
+  margin: 1.3vw 0;
+  font-size: 1.1vw;
+  font-family: GothamSSmBold;
+  letter-spacing: 1px;
 }
 hr {
   border: 0;
   border-top: 1px solid #ccc;
 }
 .initiative-by{
-  margin: 2.5vw 0 0 2.5vw;
+  margin: 2.5vw 0 0 3.5vw;
 }
 .initiative-by img{
-  width: 20vw;
+  width: 22vw;
 }
 
 .mobile-screen{
   position: absolute;
-  width: 30vw;
-  height: 44vw;
-  right: 8vw;
-  top: 6.6vw;
-  background-image: url('../assets/images/phone.png');
-  background-size: 105% auto;
+  width: 35vw;
+  height: 49.5vw;
+  right: 6vw;
+  top: 3vw;
+  background-image: url(../assets/images/phone.png);
+  background-size: 103% auto;
   background-position: center;
   background-repeat: no-repeat;
 }
 .rating-on-mobile{
   position: absolute;
-  right: 4vw;
-  top: 36vw;
-  width: 38vw;
-  height: 8vw;
-  background-size: 100% auto;
+  right: 0.4vw;
+  top: 35vw;
+  width: 46.5vw;
+  height: 9vw;
+  background-size: 95% auto;
+  background-repeat: no-repeat;
   background-position: center;
 }
 .restaurant-info{
-  width: 83%;
-  margin: 8.9vw 0 0 8.5%;
+  width: 81.4%;
+  height: 40.2vw;
+  margin: 9.6vw 0 0 9.4%;
   border-bottom: 0;
   border-radius: 5px 5px 0 0;
+  background: #fff;
 }
 .restaurant-info img{
-  width: 100%;
-  height: auto;
+  width: 28.5vw;
+  height: 15.8vw;
 }
 .restaurant-details{
   margin: 1vw;
 }
 .restaurant-details .name{
   font-family: AvenirNext;
-  font-weight: bold;
-  font-size: 1.8vw;
+  font-weight: 600;
+  font-size: 1.9vw;
   text-align: left;
   color: var(--dark-blue-grey);
 }
 .restaurant-details .location{
   font-family: Arial;
-  font-size: 1.1vw;
+  font-size: 1.3vw;
   font-weight: normal;
   font-style: normal;
   text-align: left;
   color: var(--warm-grey);
+  margin-top: .6vw;
 }
 .restaurant-details .res-rating{
   position: absolute;
   font-family: AvenirNext;
-  top: 24.3vw;
-  right: 3.5vw;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background:#a9c346;
+  top: 26.9vw;
+  right: 4.5vw;
+  padding: .3vw .6vw;
+  border-radius: .3vw;
   color: #fff;
+  font-size: 1.3vw;
 }
 .restaurant-rating {
   margin: 1.5vw;
@@ -171,15 +161,15 @@ hr {
 }
 .first-100{
   position: absolute;
-  top: 6.5vw;
-  right: 4vw;
-  width: 12vw;
-  height: 8.8vw;
+  top: 2.5vw;
+  right: 1.7vw;
+  width: 13vw;
+  height: 9.8vw;
 }
 .phone-actions{
   position: absolute;
-  top: 44vw;
-  right: 11vw;
-  width: 24vw;
+  top: 44.5vw;
+  right: 9.4vw;
+  width: 28vw;
 }
 
