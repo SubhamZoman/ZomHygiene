@@ -113,13 +113,13 @@ hr {
 .restaurant-info{
   width: 81.4%;
   height: 40.2vw;
-  margin: 9.6vw 0 0 9.4%;
+  margin: 9.4vw 0 0 9.25%;
   border-bottom: 0;
   border-radius: 5px 5px 0 0;
   background: #fff;
 }
 .restaurant-info img{
-  width: 28.5vw;
+  width: 28.6vw;
   height: 15.8vw;
 }
 .restaurant-details{
@@ -127,8 +127,8 @@ hr {
 }
 .restaurant-details .name{
   font-family: AvenirNext;
-  font-weight: 600;
-  font-size: 1.9vw;
+  font-weight: bold;
+  font-size: 11px;
   text-align: left;
   color: var(--dark-blue-grey);
 }
