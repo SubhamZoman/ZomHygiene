@@ -1,6 +1,7 @@
 $(document).ready(function () {
   let reportData;
-  fetch('../assets/report.json')
+  let fileName = window.location.href.split('?')[1].split('=')[1]
+  fetch(`../assets/reports/${fileName}.json`)
     .then(function (response) {
       return response.json();
     })
@@ -8,7 +9,7 @@ $(document).ready(function () {
       reportData = jsonObj;
       addRating(jsonObj.rating);
       addAudit(jsonObj.validUntil, jsonObj.auditedBy);
-      addRestaurantDetails(jsonObj.dishImageSrc, jsonObj.restaurantName, jsonObj.restaurantAddr, jsonObj.restaurantRating);
+      addRestaurantDetails(jsonObj.dishImageSrc, jsonObj.restaurantName, jsonObj.restaurantAddr, jsonObj.restaurantRating, jsonObj.color);
       addMobileRating(jsonObj.rating);
     });
 });
@@ -32,11 +33,12 @@ function addAudit(validUntil, auditedBy) {
   $('.audited-by').text(auditedBy);
 }
 
-function addRestaurantDetails(src, name, addr, rating) {
+function addRestaurantDetails(src, name, addr, rating, color) {
   $('.restaurant-info img').attr('src', src);
   $('.restaurant-details .name').text(name);
   $('.restaurant-details .location').text(addr);
   $('.restaurant-details .res-rating').text(rating);
+  $('.restaurant-details .res-rating').css('background', color);
 }
 
 function addMobileRating(rating) {

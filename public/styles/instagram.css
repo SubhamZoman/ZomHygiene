@@ -21,8 +21,8 @@ body, html {
   src: url("../assets/fonts/Avenir Next.ttc") format('truetype')
 }
 @font-face{
-  font-family: GothamSSmLight;
-  src: url("../assets/fonts/GothamSSm/GothamSSm-Light.otf")
+  font-family: GothamSSmBold;
+  src: url("../assets/fonts/GothamSSm/GothamSSm-Bold.otf")
 }
 
 .header {
@@ -62,11 +62,11 @@ body, html {
   font-family: AvenirNext;
 }
 .restaurant-details .location{
-  font-size: 2vw;
+  font-size: 2.3vw;
   color: var(--warm-grey);
-  font-weight: bold;
-  margin: 3vw 0 0 1.5vw;
-  font-family: GothamSSmLight;
+  font-weight: 500;
+  margin: 2.7vw 0 0 1.5vw;
+  font-family: Arial;
 }
 .food-hygiene-rating{
   font-family: AvenirNext;
@@ -115,7 +115,8 @@ body, html {
   text-align: center;
   margin: 1.8vw 0;
   font-size: 1.8vw;
-  font-family: GothamSSmLight;
+  font-family: GothamSSmBold;
+  letter-spacing: 1px;
 }
 hr {
   border: 0;
