@@ -9,18 +9,25 @@ $(document).ready(function () {
       reportData = jsonObj;
       addRating(jsonObj.rating);
       addAudit(jsonObj.validUntil, jsonObj.auditedBy);
-      addRestaurantDetails(jsonObj.dishImageSrc, jsonObj.restaurantName, jsonObj.restaurantAddr, jsonObj.restaurantRating, jsonObj.color);
+      addRestaurantDetails(jsonObj.dishImageSrc, jsonObj.restaurantName, jsonObj.restaurantAddr, jsonObj.restaurantRating, jsonObj.ratingColor);
       addMobileRating(jsonObj.rating);
     });
 });
 
 function addRating(rating) {
-  const rateThreeSrc = './assets/images/Rating 3.png';
-  const rateFourSrc = './assets/images/Rating 4.png';
-  const rateFiveSrc = './assets/images/Rating 5.png';
+  const page = window.location.href.split('/')[3].split('.')[0]
+  const rateThreeSrc = page === 'instagram'
+    ? './assets/IN/Rating 3.png'
+    : './assets/images/Rating 3.png'
+  const rateFourSrc = page === 'instagram'
+    ? './assets/IN/Rating 4.png'
+    : './assets/images/Rating 4.png'
+  const rateFiveSrc = page === 'instagram'
+    ? './assets/IN/Rating 5.png'
+    : './assets/images/Rating 5.png'
 
   var imageSrc = '';
-  switch (rating) {
+  switch (parseInt(rating)) {
     case 3: imageSrc = rateThreeSrc; break;
     case 4: imageSrc = rateFourSrc; break;
     case 5: imageSrc = rateFiveSrc; break;
@@ -47,12 +54,11 @@ function addMobileRating(rating) {
   const rateFiveSrc = './assets/images/RatingPhone 5.png';
 
   var imageSrc = '';
-  switch (rating) {
+  switch (parseInt(rating)) {
     case 3: imageSrc = rateThreeSrc; break;
     case 4: imageSrc = rateFourSrc; break;
     case 5: imageSrc = rateFiveSrc; break;
     default: imageSrc = '';
   }
-  console.log(imageSrc)
   $('.rating-on-mobile').css('background-image', `url('${imageSrc}')`);
 }

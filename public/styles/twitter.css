@@ -39,9 +39,11 @@ body, html {
 .header img {
   height: 15vw;
   width: 13vw;
+  margin: -1vw 0 0 -.5vw;
 }
 .hygiene-headings {
   margin-left: 3vw;
+  margin-top: -1vw;
 }
 .we-are-proud-to-share{
   font-family: IdealSansMedium;
@@ -55,19 +57,19 @@ body, html {
 .food-hygiene-rating{
   font-family: AvenirNext;
   font-size: 4vw;
-  font-weight: 600;
+  font-weight: bolder;
   color: #fff;
   width: 35vw;
-  line-height: 5vw;
+  line-height: 4.5vw;
 }
 .rating-container{
-  width: 45vw;
+  width: 46vw;
   height: 35vh;
-  margin: 2.5vw 0 0 3.5vw;
+  margin: 2vw 0 0 3vw;
 }
 .rating-divs img{
   width: 100%;
-  height: 13vw;
+  height: auto;
 }
 .rating{
   font-family: AvenirNext;
@@ -94,9 +96,8 @@ body, html {
 
 .valid-until-audited-by{
   font-weight: normal;
-  font-family: Arial;
   text-align: center;
-  margin: 1.3vw 0;
+  margin: 1.2vw 0;
   font-size: 1.1vw;
   font-family: GothamSSmBold;
   letter-spacing: 1px;
@@ -110,6 +111,7 @@ hr {
 }
 .initiative-by img{
   width: 22vw;
+  margin-left: -.5vw;
 }
 
 .mobile-screen{
@@ -126,7 +128,7 @@ hr {
 .rating-on-mobile{
   position: absolute;
   right: 0.4vw;
-  top: 35vw;
+  top: 35.5vw;
   width: 46.5vw;
   height: 9vw;
   background-size: 95% auto;
@@ -185,14 +187,14 @@ hr {
 }
 .first-100{
   position: absolute;
-  top: 2.5vw;
+  top: 2vw;
   right: 1.7vw;
   width: 13vw;
   height: 9.8vw;
 }
 .phone-actions{
   position: absolute;
-  top: 44.5vw;
+  top: 45vw;
   right: 9.4vw;
   width: 28vw;
 }

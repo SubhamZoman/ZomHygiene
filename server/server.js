@@ -32,13 +32,13 @@ app.post('/stickers', (req, res) => {
         }
       })
     }).catch(err => {
-      res.send(err)
+      res.status(400).send(err)
     })
 })
 
 const validateRequest = (request) => {
   return new Promise((resolve, reject) => {
-    const properties = ['rating', 'validUntil', 'auditedBy', 'dishImageSrc', 'restaurantName', 'restaurantAddr', 'restaurantRating', 'color']
+    const properties = ['rating', 'validUntil', 'auditedBy', 'dishImageSrc', 'restaurantName', 'restaurantAddr', 'restaurantRating', 'ratingColor']
     let emptyProps = []
     properties.forEach(property => {
       if (!request.hasOwnProperty(property) || request[property].length < 1) {
@@ -47,7 +47,7 @@ const validateRequest = (request) => {
     })
     emptyProps.length > 0
       ? reject({ status: 'error', emptyFields: emptyProps })
-      : resolve({status: 'success'})
+      : resolve()
   })
 }
 
