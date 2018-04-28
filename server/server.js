@@ -56,25 +56,25 @@ const startProcess = (resURL) => {
     let pathObj = {}
     const browser = await puppeteer.launch();
     const page = await browser.newPage();
-    const vpFB = { width: 1200, height: 630 }
-    const vpTW = { width: 1024, height: 512 }
-    const vpIN = { width: 1080, height: 1080 }
+    const vpFB = { width: 600, height: 315, deviceScaleFactor: 2 }
+    const vpTW = { width: 512, height: 256, deviceScaleFactor: 2 }
+    const vpIN = { width: 540, height: 540, deviceScaleFactor: 2 }
 
     page.setViewport(vpFB)
-    await page.goto(`http://localhost:4000/?file=${resURL}`, { waitUntil: 'load' });
-    await page.screenshot({ path: __dirname + '/stickers/' + resURL + '_fb_sticker.jpeg', type: 'jpeg', quality: 100, clip: { x: 0, y: 0, width: 1200, height: 630 } });
+    await page.goto(`http://localhost:4000/?file=${resURL}`, { waitUntil: 'networkidle0' });
+    await page.screenshot({ path: __dirname + '/stickers/' + resURL + '_fb_sticker.jpeg', type: 'jpeg', quality: 100, clip: { x: 0, y: 0, width: 600, height: 315 } });
     pathObj.fbStickerPath = __dirname + '/stickers/' + resURL + '_fb_sticker.jpeg'
     console.log('FB Sticker Captured!')
 
     page.setViewport(vpTW)
-    await page.goto(`http://localhost:4000/twitter.html?file=${resURL}`, { waitUntil: 'load' });
-    await page.screenshot({ path: __dirname + '/stickers/' + resURL + '_tw_sticker.jpeg', type: 'jpeg', quality: 100, clip: { x: 0, y: 0, width: 1024, height: 512 } });
+    await page.goto(`http://localhost:4000/twitter.html?file=${resURL}`, { waitUntil: 'networkidle0' });
+    await page.screenshot({ path: __dirname + '/stickers/' + resURL + '_tw_sticker.jpeg', type: 'jpeg', quality: 100, clip: { x: 0, y: 0, width: 512, height: 256 } });
     pathObj.twitterStickerPath = __dirname + '/stickers/' + resURL + '_tw_sticker.jpeg'
     console.log('Twitter Sticker Captured!')
 
     page.setViewport(vpIN)
-    await page.goto(`http://localhost:4000/instagram.html?file=${resURL}`, { waitUntil: 'load' });
-    await page.screenshot({ path: __dirname + '/stickers/' + resURL + '_in_sticker.jpeg', type: 'jpeg', quality: 100, clip: { x: 0, y: 0, width: 1080, height: 1080 } });
+    await page.goto(`http://localhost:4000/instagram.html?file=${resURL}`, { waitUntil: 'networkidle0' });
+    await page.screenshot({ path: __dirname + '/stickers/' + resURL + '_in_sticker.jpeg', type: 'jpeg', quality: 100, clip: { x: 0, y: 0, width: 540, height: 540 } });
     pathObj.instaStickerPath = __dirname + '/stickers/' + resURL + '_in_sticker.jpeg'
     console.log('Instagram Sticker Captured!')
 
